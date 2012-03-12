@@ -3,15 +3,16 @@ import java.util.List;
 
 public class PRGCracker {
 
-	private static final long LIMIT = Integer.MAX_VALUE * 2l;
+	private static final long P = 295075153L;
+
+	private static final long LIMIT = 1L << 32;
 
 	public static void main(String[] args) {
 		new PRGCracker().start();
 	}
 
-	long[] sequence = new long[] { 210205973, 22795300, 58776750, 121262470,
-			264731963, 140842553, 242590528, 195244728, 86752752 };
-	private boolean valuable;
+	long[] sequence = new long[] { 210205973L, 22795300L, 58776750L, 121262470L,
+			264731963L, 140842553L, 242590528L, 195244728L, 86752752L };
 
 	private void start() {
 		boolean success = false;
@@ -56,7 +57,6 @@ public class PRGCracker {
 		}
 	}
 
-	private static final int P = 295075153;
 
 	private long[] guessY(long x) {
 		long nextx = (2 * x + 5) % P;
