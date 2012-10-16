@@ -67,7 +67,6 @@ public class CipherDecoder {
 		System.out.println("Second course " + convertToHexString(cypher2Text));
 		Assert.assertEquals(convertToHexString(cypher1Text), convertToHexString(xor(key, s1.getBytes())));
 		Assert.assertEquals(convertToHexString(cypher2Text), convertToHexString(xor(key, s2.getBytes())));
-		// TODO Auto-generated method stub
 		Assert.assertEquals(convertToHexString(xor(cypher1Text, cypher2Text)), convertToHexString(xor(s1.getBytes(), s2.getBytes())));
 	}
 
